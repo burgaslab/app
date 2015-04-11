@@ -1,0 +1,69 @@
+<md-toolbar layout="row">
+      <!--<md-button class="menu" hide-gt-sm ng-click="ul.toggleList()" aria-label="Show User List">
+        <md-icon md-svg-icon="menu" ></md-icon>
+      </md-button>-->
+      <h1>Crops Hero!</h1>
+    </md-toolbar>
+
+    <div flex layout="row">
+      <!--<md-icon md-svg-src="/demo-partials/input/demoIcons/icons/ic_place_24px.svg"></md-icon>-->
+      <input ng-model="user.address" type="text" placeholder="Location">
+
+        <md-button class="md-raised">Show alerts</md-button>
+  </div>
+
+ <div class="category-filter">
+    <md-checkbox ng-model="data.cb1" aria-label="Checkbox 1">
+      trees
+    </md-checkbox>
+
+    <md-checkbox ng-model="data.cb2" aria-label="Checkbox 2">
+      vegetables
+    </md-checkbox>
+
+    <md-checkbox ng-model="data.cb3" aria-label="Checkbox 3">
+      bean
+    </md-checkbox>
+    <md-checkbox ng-model="data.cb4" aria-label="Checkbox 4">
+      industrial
+    </md-checkbox>
+ </div>
+
+        <!--<md-sidenav md-is-locked-open="$mdMedia('gt-sm')" class="md-whiteframe-z2" md-component-id="left">
+          <md-list>
+            <md-item ng-repeat="it in ul.users">
+                <md-button ng-click="ul.selectUser(it)" ng-class="{'selected' : it === ul.selected }">
+                  <md-icon md-svg-icon="{{it.avatar}}" class="avatar"></md-icon>
+                  {{it.name}}
+                </md-button>
+            </md-item>
+          </md-list>
+        </md-sidenav>
+
+        <md-content flex id="content">
+          <md-icon md-svg-icon="{{ul.selected.avatar}}" class="avatar"></md-icon>
+          <h2>{{ul.selected.name}}</h2>
+          <p>{{ul.selected.content}}</p>
+
+          <md-button class="share" md-no-ink ng-click="ul.share($event)" aria-label="Share">
+            <md-icon md-svg-icon="share"></md-icon>
+          </md-button>
+        </md-content>-->
+
+    </div>
+
+    <ui-gmap-google-map center='map.center'
+                    zoom='map.zoom'
+        >
+
+<!--<ui-gmap-google-map center='{expression}'
+                    zoom='{expression}'
+                    dragging='{expression}'
+                    refresh='{expression}'
+                    options='{expression}'
+                    events='{expression}'
+                    bounds='{expression}'
+                    pan='{string or boolean}'
+        > -->
+
+</ui-gmap-google-map>

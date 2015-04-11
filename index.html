@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <title>Crops Hero</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
+    <link rel="stylesheet" href="./bower_components/angular-material/angular-material.css"/>
+    <link rel="stylesheet" href="assets/app.css"/>
+    <style>
+      .angular-google-map-container { height: 400px; width: 100%; clear: both;}
+      ui-gmap-google-map {clear: both;}
+    </style>
+  </head>
+
+  <body ng-app="starterApp" layout="column" ng-controller="HomeController as ul">
+
+  <ng-view></ng-view>
+
+    <script src='http://maps.googleapis.com/maps/api/js?sensor=false'></script>
+    <script src="./bower_components/angular/angular.js"></script>
+    <script src="./bower_components/angular-animate/angular-animate.js"></script>
+    <script src="./bower_components/angular-aria/angular-aria.js"></script>
+    <script type="text/javascript" src="./bower_components/angular-material/angular-material.js"></script>
+    <script src='./bower_components/lodash/dist/lodash.min.js'></script>
+    <script src='./bower_components/angular-google-maps/dist/angular-google-maps.min.js'></script>
+    <script src='./bower_components/angular-route/angular-route.min.js'></script>
+
+    <script src="./src/crops/Users.js"></script>
+    <script src="./src/crops/HomeController.js"></script>
+    <script src="./src/crops/UserService.js"></script>
+
+    <script type="text/javascript">
+
+          angular
+              .module('starterApp', ['ngMaterial', 'ngRoute', 'users', 'uiGmapgoogle-maps'])
+              .config(function($mdThemingProvider, $mdIconProvider, uiGmapGoogleMapApiProvider, $routeProvider){
+
+                 $routeProvider
+                  .when('/', {
+                      templateUrl: './src/crops/view/home.html',
+                      controller: 'HomeController',
+                  });
+
+                 uiGmapGoogleMapApiProvider.configure({
+                      //    key: 'your api key',
+                      v: '3.17',
+                      libraries: 'weather,geometry,visualization'
+                  });
+
+                  $mdIconProvider
+                      .defaultIconSet("./assets/svg/avatars.svg", 128)
+                      .icon("menu"       , "./assets/svg/menu.svg"        , 24)
+                      .icon("share"      , "./assets/svg/share.svg"       , 24)
+                      .icon("google_plus", "./assets/svg/google_plus.svg" , 512)
+                      .icon("hangouts"   , "./assets/svg/hangouts.svg"    , 512)
+                      .icon("twitter"    , "./assets/svg/twitter.svg"     , 512)
+                      .icon("phone"      , "./assets/svg/phone.svg"       , 512);
+
+                      $mdThemingProvider.theme('default')
+                          .primaryPalette('brown')
+                          .accentPalette('red');
+
+              });
+
+    </script>
+
+  </body>
+</html>
